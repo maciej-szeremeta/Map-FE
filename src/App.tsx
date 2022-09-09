@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { Header, } from './components/layout/Header';
 import { Map, } from './components/Map/Map';
+import { AddForm, } from './components/AddForm/AddForm';
 
 export function App() {
   return (
@@ -14,7 +15,7 @@ export function App() {
       <main>
         <Routes>
           <Route path='/' element={<Map/>} />
-          {/* <Route path='/add' element={<AdFrom />} /> */}
+          <Route path='/add' element={<AddForm />} />
         </Routes>
       </main>
     </>

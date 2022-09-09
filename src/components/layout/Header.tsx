@@ -22,10 +22,14 @@ export function Header() {
     <h1>
       <strong>Mega</strong>Ogłoszenia
     </h1>
-    <Button text='Dodaj Ogłoszenie' type='button'/>
+    <Button text='+' type='button' className='addButton' to='/add'/>
     <form className='search' onSubmit={setStageFormLocalState}>
-      <input type='text' value={searchInput} onChange={e => 
-        setSearchInput(e.target.value)} />
+      <input
+        type='text'
+        value={searchInput}
+        onChange={e => 
+          setSearchInput(e.target.value)}
+        required />
       <Button text='Szukaj' type='submit'/>
     </form>
   </header>
