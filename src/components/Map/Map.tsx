@@ -5,6 +5,7 @@ import '../../utils/fix-map-icons';
 import { useSelector, } from 'react-redux';
 import { SimpleAdEntity, } from 'types';
 import { useQuery, } from 'react-query';
+import { apiUrl, } from '../../config/config';
 import type { RootState, } from '../../store';
 import { SingleAd, } from './SingleAd';
 
@@ -13,7 +14,7 @@ export function Map() {
     state.search.search);
 
   const fetchAdsList = async () => {
-    const res = await fetch(`http://localhost:3001/api/ad/search/${searchAd}`);
+    const res = await fetch(`${apiUrl}/api/ad/search/${searchAd}`);
     if (res.status === 404) {
       throw new Error('Fetching ad list failed');
     }

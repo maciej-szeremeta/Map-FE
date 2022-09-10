@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { FormEvent, useState, } from 'react';
 import { useSelector, useDispatch, } from 'react-redux';
+import { Link, } from 'react-router-dom';
 import { setSearch, } from '../../features/ad/adSlice';
 import { RootState, } from '../../store';
 import { Button, } from '../common/Button';
+import styles from './Header.module.css';
 
 export function Header() {
 
@@ -18,10 +20,12 @@ export function Header() {
 
     dispatch(setSearch(searchInput));
   };
-  return (<header>
-    <h1>
-      <strong>Mega</strong>Ogłoszenia
-    </h1>
+  return (<header className={styles.header}>
+    <Link to='/'>
+      <h1>
+        <strong>Mega</strong>Ogłoszenia
+      </h1>
+    </Link>
     <Button text='+' type='button' className='addButton' to='/add'/>
     <form className='search' onSubmit={setStageFormLocalState}>
       <input
